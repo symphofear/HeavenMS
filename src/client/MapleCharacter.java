@@ -6515,21 +6515,22 @@ public class MapleCharacter extends AbstractMapleCharacterObject {
     }
     
     public void setPlayerRates() {
-        this.expRate  *=  GameConstants.getPlayerBonusExpRate(this.level / 20);
+        //this.expRate  *=  GameConstants.getPlayerBonusExpRate(this.level / 20);
+        this.expRate  =  (this.expRate * GameConstants.getPlayerBonusExpRate(this.level / 15));
         this.mesoRate *= GameConstants.getPlayerBonusMesoRate(this.level / 20);
-        this.dropRate *= GameConstants.getPlayerBonusDropRate(this.level / 20);
+        //this.dropRate *= GameConstants.getPlayerBonusDropRate(this.level / 20);
     }
 
     public void revertLastPlayerRates() {
-        this.expRate  /=  GameConstants.getPlayerBonusExpRate((this.level - 1) / 20);
+        this.expRate  /=  GameConstants.getPlayerBonusExpRate((this.level - 1) / 15);
         this.mesoRate /= GameConstants.getPlayerBonusMesoRate((this.level - 1) / 20);
-        this.dropRate /= GameConstants.getPlayerBonusDropRate((this.level - 1) / 20);
+        //this.dropRate /= GameConstants.getPlayerBonusDropRate((this.level - 1) / 20);
     }
     
     public void revertPlayerRates() {
-        this.expRate  /=  GameConstants.getPlayerBonusExpRate(this.level / 20);
+        this.expRate  /=  GameConstants.getPlayerBonusExpRate(this.level / 15);
         this.mesoRate /= GameConstants.getPlayerBonusMesoRate(this.level / 20);
-        this.dropRate /= GameConstants.getPlayerBonusDropRate(this.level / 20);
+        //this.dropRate /= GameConstants.getPlayerBonusDropRate(this.level / 20);
     }
     
     public void setWorldRates() {
@@ -7040,6 +7041,8 @@ public class MapleCharacter extends AbstractMapleCharacterObject {
             }
             rs.close();
             ps.close();
+            
+            
             ps = con.prepareStatement("SELECT mapid,vip FROM trocklocations WHERE characterid = ? LIMIT 15");
             ps.setInt(1, charid);
             rs = ps.executeQuery();
@@ -8523,6 +8526,7 @@ public class MapleCharacter extends AbstractMapleCharacterObject {
             if (cashshop != null) {
                 cashshop.save(con);
             }
+            
             
             if (storage != null && usedStorage) {
                 storage.saveToDB(con);
@@ -10625,5 +10629,6 @@ public class MapleCharacter extends AbstractMapleCharacterObject {
     public int getLanguage() {
         return getClient().getLanguage();
     }
+    
     
 }
