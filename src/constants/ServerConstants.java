@@ -22,7 +22,7 @@ public class ServerConstants {
     public static final int CHANNEL_LOAD = 100;                 //Max players per channel (limit actually used to calculate the World server capacity).
     public static final int CHANNEL_LOCKS = 20;                 //Total number of structure management locks each channel has.
     
-    public static final long RESPAWN_INTERVAL = 10 * 1000;	//10 seconds, 10000.
+    public static final long RESPAWN_INTERVAL = 3 * 1000;	//10 seconds, 10000.
     public static final long PURGING_INTERVAL = 5 * 60 * 1000;
     public static final long RANKING_INTERVAL = 60 * 60 * 1000;	//60 minutes, 3600000.
     public static final long  COUPON_INTERVAL = 60 * 60 * 1000;	//60 minutes, 3600000.
@@ -142,7 +142,7 @@ public class ServerConstants {
     //Server Rates And Experience
     public static final int EXP_RATE = 10;                          //NOTE: World-specific rates within "world.ini" OVERRIDES the default rates from here.
     public static final int MESO_RATE = 10;
-    public static final int DROP_RATE = 10;
+    public static final int DROP_RATE = 2;
     public static final int BOSS_DROP_RATE = 10;                    //NOTE: Boss drop rate OVERRIDES common drop rate, for bosses-only.
     public static final int QUEST_RATE = 5;                         //Multiplier for Exp & Meso gains when completing a quest. Only available when USE_QUEST_RATE is true. Stacks with server Exp & Meso rates.
     public static final int FISHING_RATE = 10;                      //Multiplier for success likelihood on meso thrown during fishing.
@@ -158,7 +158,7 @@ public class ServerConstants {
     public static final float PARTY_BONUS_EXP_RATE = 1.0f;          //Rate for the party exp bonus reward.
     
     //Miscellaneous Configuration
-    public static String TIMEZONE = "GMT-3";
+    public static String TIMEZONE = "GMT+8";
     public static boolean USE_DISPLAY_NUMBERS_WITH_COMMA = true;        //Enforce comma on displayed strings (use this when USE_UNITPRICE_WITH_COMMA is active and you still want to display comma-separated values).
     public static boolean USE_UNITPRICE_WITH_COMMA = true;              //Set this accordingly with the layout of the unitPrices on Item.wz XML's, whether it's using commas or dots to represent fractions.
     public static final byte MAX_MONITORED_BUFFSTATS = 5;               //Limits accounting for "dormant" buff effects, that should take place when stronger stat buffs expires.
@@ -241,7 +241,7 @@ public class ServerConstants {
     public static final boolean USE_SPIKES_AVOID_BANISH = true; //Shoes equipped with spikes prevents mobs from banishing wearer.
     public static final int MAX_EQUIPMNT_LVLUP_STAT_UP = 10000; //Max stat upgrade an equipment can have on a levelup.
     public static final int MAX_EQUIPMNT_STAT = 32767;          //Max stat on an equipment by leveling up.
-    public static final int USE_EQUIPMNT_LVLUP = 7;             //All equips lvlup at max level of N, set 1 to disable.
+    public static final int USE_EQUIPMNT_LVLUP = 10;             //All equips lvlup at max level of N, set 1 to disable.
     
     //Map-Chair Configuration
     public static final boolean USE_CHAIR_EXTRAHEAL = true;     //Enable map chairs to further recover player's HP and MP (player must have the Chair Mastery skill).
